@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); /* url de fonts.google primero se selecciona y se copia link */
+
+* {
+  margin: 0px; /* margen 0 para la página */
+  padding: 0px; /* relleno 0 para la página */
+  box-sizing: border-box; /* tamaño de caja se incluye padding y border */
+}
+
+body {
+  min-height: 100vh; /* alto mínimo posible (min-height) de 100% en función del viewport vertical (100vh) */
+  font-family: "Roboto", sans-serif; /* de fonts */
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ESTILO PARA CELULAR EXTRA SMALL <576PX MAX WIDTH */
+.grid-container {
+  display: grid; /* para alinear el contendio */
+  grid-template-columns: 1fr; /* una columna */
+  grid-template-rows: auto auto auto auto; /* cuatro filas */
+  grid-template-areas:/* a que parte del layout corresponde cada nombre */
+    "nav"
+    "descripcion"
+    "contenido"
+    "footer";
+}
+
+/* ESTILO NAV */
+nav {
+  grid-area: nav; /* nombre por area */
+  background-color: black; /* color de fondo */
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: column; /* dirección column */
+  justify-content: flex-start; /* alinear al inicio  por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  padding: 8px; /* relleno */
+}
+
+.inicio {
+  /* esta el logo y el listado */
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: row; /* dirección row */
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  gap: 40px; /* separación entre filas y columnas */
+  padding: 7px; /* relleno */
+}
+
+.logo img {
+  width: 70px; /* ancho */
+  height: 70px; /* alto */
+  text-align: start; /* alinear texto al inicio */
+}
+
+.listado {
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: row; /* dirección row */
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  cursor: pointer; /* mostrar posicion en el listado */
+  gap: 7px; /* separación entre filas y columnas */
+}
+
+.listado p {
+  color: rgb(194, 191, 191); /* color letra */
+  font-size: 14px; /* tamaño de la letra */
+}
+
+.listado p:hover {
+  color: white; /* color letra */
+}
+
+.listado a {
+  text-decoration: none; /* sin text-decoration */
+}
+
+/* ESTILO DESCRIPCION */
+.textos {
+  grid-area: descripcion; /* nombre por area */
+  background-color: rgb(227, 226, 226); /* color de fondo */
+  color: black; /* color letra */
+  padding-top: 12px; /* relleno arriba */
+  padding-bottom: 10px; /* relleno abajo */
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: column; /* dirección column */
+  justify-content: center; /* alinear al centro  por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  text-align: center; /* alinear texto al centro */
+  gap: 5px; /* separación entre filas y columnas */
+}
+
+.txtpagina {
+  padding-bottom: 7px; /* relleno abajo */
+  padding-top: 7px; /* relleno arriba */
+}
+
+.txtpagina p {
+  font-size: 14px; /* tamaño letra */
+  padding-top: 7px; /* relleno arriba */
+}
+
+.txtpagina img {
+  width: 100%; /* ancho */
+  max-width: 300px; /* maximo ancho */
+  padding-top: 12px; /* relleno arriba */
+  border-radius: 20px; /* borde circular */
+}
+
+/* ESTILO CONTENIDO */
+.contenido {
+  grid-area: contenido; /* nombre por area */
+  background-color: white; /* color de fondo */
+  padding: 20px; /* relleno */
+}
+
+.productos {
+  display: grid; /* para alinear el contendio */
+  grid-template-columns: 1fr; /* una columna */
+  gap: 20px; /* separación entre filas y columnas */
+  padding-top: 5px; /* relleno arriba */
+  padding-left: 7px; /* relleno izquierdo */
+  padding-right: 7px; /* relleno derecho */
+}
+
+.producto {
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: column; /* dirección column */
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  background-color: white; /* color de fondo */
+  border: 2px solid; /* borde */
+  border-color: rgb(215, 211, 211); /* color de borde */
+  border-radius: 5px; /* borde circular */
+  padding: 12px; /* relleno */
+  box-shadow: 5px 5px 5px 0 #c2c4c5; /* sombra */
+  overflow: hidden; /* desbordamiento oculto */
+}
+
+.imagen img {
+  width: 100%; /* ancho */
+  max-width: 280px; /* máximo ancho */
+
+  filter: grayscale(100%); /* img en blanco y negro 100% gris */
+  transition: all 1s ease-in-out; /* con tiempo en la transicion y con inicio lento, luego acelera y luego desacelera hacia el final */
+}
+
+.imagen img:hover {
+  /* hover para que funcione la transition */
+  filter: grayscale(0%); /* vuelve img a color original al pasar el cursor */
+  transform: scale(1.1); /* escala la img, se agranda en tamaño */
+}
+
+.texto {
+  font-size: 12px; /* tamaño de la letra */
+  padding-bottom: 5px; /* relleno abajo */
+  color: rgb(109, 108, 108); /* color de letra */
+}
+
+.texto2 {
+  font-size: 14px; /* tamaño de la letra */
+  padding-bottom: 5px; /* relleno abajo */
+  color: rgb(54, 53, 53); /* color de letra */
+}
+
+/* ESTILO PARA EL FOOTER */
+footer {
+  grid-area: footer; /* nombre por area */
+  background-color: rgb(100, 97, 97); /* color de fondo */
+  color: white; /* color letra */
+  display: flex; /* alinear contenido uno  al lado de otro */
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  flex-direction: column; /* dirección column */
+}
+
+footer .contacto {
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: column; /* dirección column */
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  gap: 7px; /* separación entre filas y columnas */
+  padding-top: 7px; /* relleno arriba */
+}
+
+.contacto p {
+  font-size: 16px; /* tamaño letra */
+  padding-top: 8px; /* relleno arriba */
+}
+
+footer .ip {
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: row;
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  gap: 8px; /* separación entre filas y columnas */
+}
+
+.ip i {
+  padding-top: 8px;
+}
+
+footer .rs {
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: row;
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+  gap: 7px; /* separación entre filas y columnas */
+  cursor: pointer; /* mostrar posicion en el listado */
+}
+
+.rs i {
+  padding-top: 20px; /* relleno arriba */
+  padding-bottom: 10px;
+  font-size: 20px; /* tamaño letra */
+  color: rgb(48, 48, 114); /* color icono */
+}
+
+footer .foo {
+  display: flex; /* alinear contenido uno  al lado de otro */
+  flex-direction: column; /* dirección column */
+  justify-content: center; /* alinear al centro por defecto eje horizontal principal */
+  align-items: center; /* alinear centrado items por defecto eje vertical secundario transversal  */
+}
+
+.foo p {
+  padding-bottom: 10px; /* relleno abajo */
+  font-size: 16px; /* tamaño de la letra */
+}
+
+/* SMALL >=576PX TABLET  DESDE AQUÍ PARA ARRIBA HACE ESTO */
+@media (min-width: 576px) {
+  .grid-container {
+    display: grid; /* para alinear el contendio */
+    grid-template-columns: 15% 85%; /* dos columnas */
+    grid-template-rows: auto auto auto; /* tres filas */
+
+    grid-template-areas:/* a que parte del layout corresponde cada nombre */
+      "nav descripcion"
+      "nav contenido"
+      "footer footer";
+  }
+
+  .inicio {
+    flex-direction: column; /* dirección column */
+    gap: 30px; /* separación entre filas y columnas */
+  }
+
+  .listado {
+    flex-direction: column; /* dirección column */
+  }
+
+  .productos {
+    grid-template-columns: 1fr 1fr; /* dos columnas */
+  }
+}
+
+/* LARGE >=992PX PC  DESDE AQUÍ PARA ARRIBA HACE ESTO */
+@media (min-width: 992px) {
+  .productos {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* cuatro columnas */
+  }
+}
